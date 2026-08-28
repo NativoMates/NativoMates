@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nativo Mates Campana | Mates artesanales y termos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Nativo Mates</a>
+            <nav>
+                <a href="#productos">Productos</a>
+                <a href="#como-comprar">Cómo comprar</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <button class="contact-btn" onclick="scrollToSection('#contacto')">Contacto</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>El mate que te acompaña a todos lados</h1>
+            <p>Mates, termos y bombillas elegidos pieza por pieza. Venta por mayor y por menor, con envíos a todo el país.</p>
+            <button class="btn-primary" onclick="scrollToSection('#contacto')">Pedir más información</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Envíos a todo el país</h3>
+                <p>Despachamos en 24/48 hs hábiles con empresas confiables.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3>Mayor y menor</h3>
+                <p>Precios especiales para revendedores y compras en cantidad.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Campana y Los Cardales</h3>
+                <p>Retiro coordinado por WhatsApp en nuestros locales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="productos">
+        <div class="products-container">
+            <div class="section-header">
+                <h2>Qué tenemos</h2>
+                <p>Elegí lo que te interesa y pedinos más información desde el formulario. Te asesoramos para elegir el mate justo.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">🧉</div>
+                    <h3>Mates artesanales</h3>
+                    <p>Calabaza, algarrobo y cerámica con virola de alpaca. Piezas únicas, curadas a mano.</p>
+                    <a href="#contacto" onclick="scrollToSection('#contacto')">Consultar →</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">☕</div>
+                    <h3>Termos y bombillas</h3>
+                    <p>Termos de acero que mantienen la temperatura y bombillas de alpaca pico de loro.</p>
+                    <a href="#contacto" onclick="scrollToSection('#contacto')">Consultar →</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">✨</div>
+                    <h3>Curado y mantenimiento</h3>
+                    <p>Curamos tu mate nuevo o recuperamos el que ya tenés para que dure años.</p>
+                    <a href="#contacto" onclick="scrollToSection('#contacto')">Consultar →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section class="how-to-buy" id="como-comprar">
+        <div class="how-to-buy-container">
+            <div class="section-header">
+                <h2>Cómo comprar</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Escribinos</h3>
+                    <p>Completás el formulario de contacto con tu consulta.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Elegís</h3>
+                    <p>Te mandamos fotos reales del stock, descripción y precios.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Lo recibís</h3>
+                    <p>Coordinamos envío o retiro y listo, a disfrutar tu mate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-container">
+            <h2>Somos de acá</h2>
+            <p>Nativo Mates nació en Campana con una idea simple: que cada persona tenga el mate que la representa. Trabajamos con artesanos, curamos cada pieza y la probamos antes de que salga.</p>
+            <p><strong>Atendemos uno por uno:</strong> contanos cómo tomás el mate y te recomendamos.</p>
+            <div class="about-highlights">
+                <div class="highlight">
+                    <div class="highlight-icon">🎯</div>
+                    <h4>Selección</h4>
+                    <p>Elegimos cada pieza con cuidado</p>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-icon">🧑‍🤝‍🧑</div>
+                    <h4>Personal</h4>
+                    <p>Atención personalizada y asesoramiento</p>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-icon">🌿</div>
+                    <h4>Artesanía</h4>
+                    <p>Trabajamos con maestros artesanos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contacto">
+        <div class="cta-container">
+            <h2>¿Armamos tu mate?</h2>
+            <p>Dejanos tu consulta y te respondemos al toque con fotos, precios y formas de envío.</p>
+            <button class="btn-primary" onclick="openContactForm()">Completar el formulario</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Nativo Mates</h3>
+                    <p>Mates artesanales y termos de calidad</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank">📷</a>
+                        <a href="https://wa.me/" target="_blank">💬</a>
+                        <a href="mailto:info@nativomates.com">📧</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Ubicación</h3>
+                    <p>Campana, Buenos Aires</p>
+                    <p>Los Cardales, Buenos Aires</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <a href="#productos">Productos</a>
+                    <a href="#como-comprar">Cómo comprar</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nativo Mates · Campana, Buenos Aires. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
