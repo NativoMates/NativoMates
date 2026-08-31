@@ -5,7 +5,7 @@
 // Datos de configuración
 const CONFIG = {
     whatsappNumber: '5493489701958',
-    whatsappMessage: '¡Hola Nativo Mates! Quiero hacer una consulta 🧉'
+    whatsappMessage: '¡Hola Nativo Mates! Quiero hacer una consulta.'
 };
 
 /* ============================================
