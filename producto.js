@@ -42,7 +42,7 @@ const productos = [
     {
         id: 8,
         nombre: 'Matera Chica EcoCuero',
-        categoria: 'Materas',
+        categoria: 'materas',
         descripcion: 'Matera con menor capacidad, mas comodidad. Clásica.',
         caracteristicas: ['Comoda', 'Versatil', 'Calidad Unica'],
         imagen: 'matera2.jpeg',
