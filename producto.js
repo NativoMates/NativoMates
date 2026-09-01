@@ -23,7 +23,7 @@ const productos = [
     },
     {
         id: 3,
-        nombre: 'Mate tipo "Camionero"',
+        nombre: 'Mate tipo "Camionero',
         categoria: 'mates',
         descripcion: 'Madera de algarrobo. Tradicional y elegante.',
         caracteristicas: ['Madera de algarrobo', 'Gran capacidad', 'Muy duradero', 'Acabado natural'],
