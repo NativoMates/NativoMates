@@ -5,75 +5,65 @@
 const productos = [
     {
         id: 1,
-        nombre: 'Mate de Calabaza Grande',
+        nombre: 'Mate tipo "Coquito"',
         categoria: 'mates',
-        descripcion: 'Calabaza natural con virola de alpaca. Ideal para tomar mate solo.',
-        caracteristicas: ['Calabaza 100% natural', 'Virola de alpaca', 'Curado artesanal', 'Gran capacidad'],
-
-        imagen: 'mate_calabaza_1.png',
+        descripcion: 'Mate tipo "Coquito", ideal para tomar solo o con amigos.',
+        caracteristicas: ['100% natural', 'Gran capacidad'],
+        imagen: 'coquito.jpeg',
         stock: 'disponible'
     },
     {
         id: 2,
-        nombre: 'Mate de Calabaza Mediano',
+        nombre: 'Mate de Algarrobo Imperial',
         categoria: 'mates',
         descripcion: 'Tamaño perfecto para compartir. Muy versátil.',
-        caracteristicas: ['Calabaza premium', 'Virola de alpaca', 'Piezas únicas', 'Talla mediana'],
-        imagen: 'mate_calabaza_2.png',
+        caracteristicas: ['Calidad premium', 'Virola de alpaca', 'Piezas únicas', 'Talla mediana'],
+        imagen: 'algarrobo.jpeg',
         stock: 'disponible'
     },
     {
         id: 3,
-        nombre: 'Mate de Algarrobo',
+        nombre: 'Mate tipo "Camionero"',
         categoria: 'mates',
         descripcion: 'Madera de algarrobo. Tradicional y elegante.',
-        caracteristicas: ['Madera de algarrobo', 'Virola de alpaca', 'Muy duradero', 'Acabado natural'],
-        imagen: 'mate_algarrobo_1.png',
+        caracteristicas: ['Madera de algarrobo', 'Gran capacidad', 'Muy duradero', 'Acabado natural'],
+        imagen: 'camionero.jpeg',
         stock: 'disponible'
     },
     {
         id: 4,
-        nombre: 'Mate Cerámica Artesanal',
-        categoria: 'mates',
-        descripcion: 'Cerámica hecha a mano. Diseño único.',
-        caracteristicas: ['Cerámica artesanal', 'Virola de alpaca', 'Piezas únicas', 'Diseño moderno'],
-        imagen: 'mate_ceramica_1.png',
-        stock: 'limitado'
+        nombre: 'Matera EcoCuero estilo Cuadrada',
+        categoria: 'materas',
+        descripcion: 'Matera clasica. Diseño único.',
+        caracteristicas: ['EcoCuero', 'Piezas únicas', 'Diseño clasico'],
+        imagen: 'matera.jpeg',
+        stock: 'disponible'
     },
     {
         id: 8,
-        nombre: 'Bombilla Alpaca Pico de Loro',
-        categoria: 'accesorios',
-        descripcion: 'Bombilla de alpaca con pico de loro. Clásica.',
-        caracteristicas: ['Alpaca alemana', 'Pico de loro', 'Filtro fino', 'Fácil de limpiar'],
-        imagen: 'bombilla_loro.png',
+        nombre: 'Matera Chica EcoCuero',
+        categoria: 'Materas',
+        descripcion: 'Matera con menor capacidad, mas comodidad. Clásica.',
+        caracteristicas: ['Comoda', 'Versatil', 'Calidad Unica'],
+        imagen: 'matera2.jpeg',
         stock: 'disponible'
     },
     {
         id: 9,
-        nombre: 'Bombilla Alpaca Grande',
-        categoria: 'accesorios',
-        descripcion: 'Bombilla grande para mates amplios.',
-        caracteristicas: ['Alpaca de calidad', 'Tamaño grande', 'Filtro extendido', 'Durabilidad'],
-        imagen: 'bombilla_alpaca.png',
+        nombre: 'Yerberas',
+        categoria: 'yerberas',
+        descripcion: 'Distintos tipos de yerberas, maxima calidad.',
+        caracteristicas: ['Durables','Comodas', 'Versatil'],
+        imagen: 'yerberas.jpeg',
         stock: 'disponible'
     },
     {
         id: 10,
-        nombre: 'Set de Bombillas (3 unidades)',
+        nombre: 'Bombillas',
         categoria: 'accesorios',
-        descripcion: 'Pack de 3 bombillas de alpaca diferentes.',
-        caracteristicas: ['3 bombillas incluidas', 'Alpaca de calidad', 'Variedad de tamaños', 'Económico'],
-        imagen: 'set_bombillas.png',
-        stock: 'limitado'
-    },
-    {
-        id: 11,
-        nombre: 'Cepillo de Limpieza para Bombilla',
-        categoria: 'accesorios',
-        descripcion: 'Cepillo especial para limpiar bombillas.',
-        caracteristicas: ['Cerdas naturales', 'Mango cómodo', 'Muy efectivo', 'Larga durabilidad'],
-        imagen: 'cepillo_bombilla.png',
+        descripcion: 'Distintos tipos de bombillas',
+        caracteristicas: ['Distintas bombillas', 'Alpaca de calidad', 'Variedad de tamaños', 'Económico'],
+        imagen: 'bombillas.jpeg',
         stock: 'disponible'
     },
 ];
