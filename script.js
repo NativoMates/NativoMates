@@ -5,8 +5,17 @@
 // Datos de configuración
 const CONFIG = {
     whatsappNumber: '5493489701958',
-    whatsappMessage: '¡Hola Nativo Mates! Quiero hacer una consulta.'
+    whatsappMessage: '¡Hola Nativo Mates! Quiero hacer una consulta!'
 };
+
+function sendGAEvent(eventName, eventData = {}) {
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+        event: eventName,
+        ...eventData
+    });
+}
 
 /* ============================================
    FUNCIONES DE SCROLL Y NAVEGACIÓN
@@ -27,6 +36,10 @@ function scrollToSection(selector) {
  * Abre el formulario de contacto en WhatsApp
  */
 function openContactForm() {
+    sendGAEvent('contact_whatsapp', {
+        method: 'whatsapp'
+    });
+
     const whatsappUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
 }

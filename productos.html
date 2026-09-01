@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TLSS354D');
+    </script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Productos | Nativo Mates Campana</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="producto.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLSS354D"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="imagenes/nativomateslogo.png" alt="Nativo Mates">
+
+            </a>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="como-comprar.html">Cómo comprar</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <button class="contact-btn" onclick="scrollToSection('#contacto')">Contacto</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero-productos">
+        <div class="hero-container">
+            <h1>Nuestros Productos</h1>
+            <p>Cada pieza seleccionada con cuidado. Todos curados y listos para usar.</p>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filtros-section">
+        <div class="productos-container">
+            <div class="filtros-header">
+                <h3>Filtrar por categoría</h3>
+            </div>
+            <div class="filtros-container">
+                <button class="filtro-btn active" onclick="filtrarProductos('todos')">Todos</button>
+                <button class="filtro-btn" onclick="filtrarProductos('mates')">Mates</button>
+                <button class="filtro-btn" onclick="filtrarProductos('accesorios')">Accesorios</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Productos -->
+    <section class="productos-seccion">
+        <div class="productos-container">
+            <div id="productosGrid" class="productos-grid">
+                <!-- Los productos se cargan aquí con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Buscador -->
+    <section class="buscar-seccion">
+        <div class="productos-container">
+            <div class="buscar-container">
+                <input 
+                    type="text" 
+                    id="buscador" 
+                    class="buscador-input" 
+                    placeholder="🔍 Buscar productos..."
+                    onkeyup="buscarProductos()"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- Características -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <h3>Calidad Garantizada</h3>
+                <p>Cada producto pasa control de calidad antes de vender.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Embalaje Seguro</h3>
+                <p>Enviamos en cajas especiales con protección.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💯</div>
+                <h3>100% Artesanal</h3>
+                <p>Trabajamos con maestros artesanos locales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contacto">
+        <div class="cta-container">
+            <h2>¿Te interesa algún producto?</h2>
+            <p>Consultanos sobre disponibilidad, precios y promociones.</p>
+           <button class="btn-primary" onclick="openContactForm()">Completar el formulario</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Nativo Mates</h3>
+                    <p>Mates artesanales y termos de calidad</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank">📷</a>
+                        <a href="https://wa.me/5493489701958" target="_blank">💬</a>
+                        <a href="mailto:info@nativomates.com">📧</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Ubicación</h3>
+                    <p>Campana, Buenos Aires</p>
+                    <p>Los Cardales, Buenos Aires</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <a href="index.html">Inicio</a>
+                    <a href="como-comprar.html">Cómo comprar</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nativo Mates · Campana, Buenos Aires. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="producto.js"></script>
+</body>
+</html>
