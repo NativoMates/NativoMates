@@ -82,27 +82,3 @@ El objetivo es utilizar estos datos para comprender qué elementos del sitio gen
 ---
 
 ## 📁 Estructura del proyecto
-
-text
-NativoMates/
-│
-├── index.html
-├── productos.html
-├── como-comprar.html
-│
-├── producto.css
-├── productos.js
-├── style.css
-├── script.js
-│
-├── nativomateslogo.png
-│
-├── algarrobo.jpeg
-├── bombillas.jpeg
-├── camionero.jpeg
-├── coquito.jpeg
-├── mate3.jpeg
-├── matera.jpeg
-├── matera2.jpeg
-├── termo.png
-└── yerberas.jpeg
