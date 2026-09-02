@@ -26,7 +26,7 @@ const productos = [
         nombre: 'Mate tipo "Camionero',
         categoria: 'mates',
         descripcion: 'Madera de algarrobo. Tradicional y elegante.',
-        caracteristicas: ['Calabaza de alta calidad', 'Gran capacidad', 'Muy duradero', 'Acabado natural'],
+        caracteristicas: ['Madera de algarrobo', 'Gran capacidad', 'Muy duradero', 'Acabado natural'],
         imagen: 'camionero.jpeg',
         stock: 'disponible'
     },
@@ -42,7 +42,7 @@ const productos = [
     {
         id: 8,
         nombre: 'Matera Chica EcoCuero',
-        categoria: 'materas',
+        categoria: 'Materas',
         descripcion: 'Matera con menor capacidad, mas comodidad. Clásica.',
         caracteristicas: ['Comoda', 'Versatil', 'Calidad Unica'],
         imagen: 'matera2.jpeg',
