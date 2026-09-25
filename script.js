@@ -207,3 +207,105 @@ function showDebugInfo() {
 
 // Descomentar para debugging
 // showDebugInfo();
+/* =========================================================
+   NATIVO MATES — UX ENHANCEMENTS
+   Mantiene intactos CONFIG, GTM, eventos y WhatsApp.
+   ========================================================= */
+function initFloatingActions() {
+    if (document.querySelector('.floating-actions')) return;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'floating-actions';
+    wrapper.innerHTML = `
+        <div class="floating-btn-wrap">
+            <span class="floating-label">Consultar por WhatsApp</span>
+            <button class="floating-btn floating-whatsapp" type="button" aria-label="Consultar por WhatsApp" title="Consultar por WhatsApp">◉</button>
+        </div>
+        <div class="floating-btn-wrap">
+            <span class="floating-label">Volver arriba</span>
+            <button class="floating-btn floating-top" type="button" aria-label="Volver arriba" title="Volver arriba">↑</button>
+        </div>`;
+    document.body.appendChild(wrapper);
+    wrapper.querySelector('.floating-whatsapp').addEventListener('click', () => {
+        if (typeof openContactForm === 'function') openContactForm();
+    });
+    const topButton = wrapper.querySelector('.floating-top');
+    topButton.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    const update = () => topButton.classList.toggle('visible', window.scrollY > 450);
+    window.addEventListener('scroll', update, {passive:true});
+    update();
+}
+
+function initMobileNavigation() {
+    const header = document.querySelector('header');
+    const nav = header?.querySelector('nav');
+    const container = header?.querySelector('.header-container');
+    if (!header || !nav || !container || container.querySelector('.mobile-menu-toggle')) return;
+
+    const toggle = document.createElement('button');
+    toggle.className = 'mobile-menu-toggle';
+    toggle.type = 'button';
+    toggle.setAttribute('aria-label','Abrir menú');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.textContent = '☰';
+
+    const mobileNav = document.createElement('div');
+    mobileNav.className = 'mobile-nav';
+    mobileNav.setAttribute('aria-hidden','true');
+    nav.querySelectorAll('a').forEach(link => mobileNav.appendChild(link.cloneNode(true)));
+    container.appendChild(toggle);
+    header.appendChild(mobileNav);
+
+    const close = () => {
+        mobileNav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Abrir menú');
+        toggle.textContent = '☰';
+        mobileNav.setAttribute('aria-hidden','true');
+    };
+    toggle.addEventListener('click', () => {
+        const open = mobileNav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded',String(open));
+        toggle.setAttribute('aria-label',open ? 'Cerrar menú' : 'Abrir menú');
+        toggle.textContent = open ? '×' : '☰';
+        mobileNav.setAttribute('aria-hidden',String(!open));
+    });
+    mobileNav.addEventListener('click', e => { if (e.target.closest('a')) close(); });
+    document.addEventListener('click', e => { if (!header.contains(e.target)) close(); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 820) close(); });
+}
+
+function initPremiumReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const targets = document.querySelectorAll('.hero-container,.section-header,.about-container,.cta-container,.feature-card,.product-card,.step-card,.highlight,.producto-card');
+    targets.forEach((el,i) => {
+        if (!el.classList.contains('reveal')) {
+            el.classList.add('reveal');
+            el.style.transitionDelay = `${Math.min(i % 4,3) * 70}ms`;
+        }
+    });
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {threshold:.12, rootMargin:'0px 0px -50px 0px'});
+    targets.forEach(el => observer.observe(el));
+}
+
+function initActiveNavigation() {
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('header nav a, .mobile-nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#')) return;
+        if (href.split('/').pop() === current) link.setAttribute('aria-current','page');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initFloatingActions();
+    initMobileNavigation();
+    initPremiumReveal();
+    initActiveNavigation();
+});
