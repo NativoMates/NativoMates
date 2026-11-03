@@ -10,7 +10,7 @@ const productos = [
         descripcion: 'Mate tipo "Coquito", ideal para tomar solo o con amigos.',
         caracteristicas: ['100% natural', 'Gran capacidad'],
         imagen: 'coquito.jpeg',
-        mensaje: '¡Hola Nativo Mates! Vi en la web el mate tipo "Coquito" y me interesa. ¿Lo tienen disponible? ¿Me pasan fotos reales, precio y formas de envío?',
+        mensaje: '¡Hola Nativo Mates! 👋 Vi en la web el mate tipo "Coquito" y me interesa. ¿Lo tienen disponible? ¿Me pasan fotos reales, precio y formas de envío?',
         stock: ''
     },
     {
@@ -20,7 +20,7 @@ const productos = [
         descripcion: 'Tamaño perfecto para compartir. Muy versátil.',
         caracteristicas: ['Calidad premium', 'Virola de alpaca', 'Piezas únicas', 'Talla mediana'],
         imagen: 'algarrobo.jpeg',
-        mensaje: '¡Hola Nativo Mates! Me gustó el Mate de Algarrobo Imperial con virola de alpaca. ¿Tienen stock? ¿Me pueden mostrar fotos de las piezas que tienen y decirme el precio?',
+        mensaje: '¡Hola Nativo Mates! 👋 Me gustó el Mate de Algarrobo Imperial con virola de alpaca. ¿Tienen stock? ¿Me pueden mostrar fotos de las piezas que tienen y decirme el precio?',
         stock: ''
     },
     {
@@ -30,7 +30,7 @@ const productos = [
         descripcion: 'Madera de algarrobo. Tradicional y elegante.',
         caracteristicas: ['Madera de algarrobo', 'Gran capacidad', 'Muy duradero', 'Acabado natural'],
         imagen: 'camionero.jpeg',
-        mensaje: '¡Hola Nativo Mates! Estoy interesado/a en el mate tipo "Camionero" de algarrobo. ¿Tienen disponible? ¿Me pasan fotos, precio y cómo sería el envío o retiro?',
+        mensaje: '¡Hola Nativo Mates! 👋 Estoy interesado/a en el mate tipo "Camionero" de algarrobo. ¿Tienen disponible? ¿Me pasan fotos, precio y cómo sería el envío o retiro?',
         stock: ''
     },
     {
@@ -40,7 +40,7 @@ const productos = [
         descripcion: 'Matera clasica. Diseño único.',
         caracteristicas: ['EcoCuero', 'Piezas únicas', 'Diseño clasico'],
         imagen: 'matera.jpeg',
-        mensaje: '¡Hola Nativo Mates! Me interesa la Matera de EcoCuero estilo Cuadrada. ¿Tienen disponible? ¿Qué colores hay y cuánto sale?',
+        mensaje: '¡Hola Nativo Mates! 👋 Me interesa la Matera de EcoCuero estilo Cuadrada. ¿Tienen disponible? ¿Qué colores hay y cuánto sale?',
         stock: ''
     },
     {
@@ -50,7 +50,7 @@ const productos = [
         descripcion: 'Matera con menor capacidad, mas comodidad. Clásica.',
         caracteristicas: ['Comoda', 'Versatil', 'Calidad Unica'],
         imagen: 'matera2.jpeg',
-        mensaje: '¡Hola Nativo Mates! Quiero consultar por la Matera Chica de EcoCuero. ¿Tienen stock? ¿Me pasan fotos de los modelos y el precio?',
+        mensaje: '¡Hola Nativo Mates! 👋 Quiero consultar por la Matera Chica de EcoCuero. ¿Tienen stock? ¿Me pasan fotos de los modelos y el precio?',
         stock: ''
     },
     {
@@ -60,7 +60,7 @@ const productos = [
         descripcion: 'Distintos tipos de yerberas, maxima calidad.',
         caracteristicas: ['Durables','Comodas', 'Versatil'],
         imagen: 'yerberas.jpeg',
-        mensaje: '¡Hola Nativo Mates! Me interesan las yerberas. ¿Qué modelos tienen disponibles ahora? ¿Me pasan fotos y precios?',
+        mensaje: '¡Hola Nativo Mates! 👋 Me interesan las yerberas. ¿Qué modelos tienen disponibles ahora? ¿Me pasan fotos y precios?',
         stock: ''
     },
     {
@@ -70,7 +70,7 @@ const productos = [
         descripcion: 'Distintos tipos de bombillas',
         caracteristicas: ['Distintas bombillas', 'Alpaca de calidad', 'Variedad de tamaños', 'Económico'],
         imagen: 'bombillas.jpeg',
-        mensaje: '¡Hola Nativo Mates! Quiero consultar por las bombillas. ¿Qué tipos y tamaños tienen? ¿Me pasan fotos y precios?',
+        mensaje: '¡Hola Nativo Mates! 👋 Quiero consultar por las bombillas. ¿Qué tipos y tamaños tienen? ¿Me pasan fotos y precios?',
         stock: ''
     },
 ];
@@ -313,8 +313,53 @@ function capitalizar(texto) {
    INICIALIZACIÓN
    ============================================ */
 
+
+/* ============================================
+   BUSCADOR: placeholder que se escribe solo
+   ============================================ */
+
+function initTypingPlaceholder() {
+    const input = document.getElementById('buscador');
+    if (!input) return;
+
+    const defaultText = 'Buscar productos...';
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        input.placeholder = defaultText;
+        return;
+    }
+
+    const prefix = 'Buscar: ';
+    const ejemplos = ['algarrobo', 'bombillas', 'matera ecocuero', 'yerberas', 'camionero', 'coquito', 'alpaca'];
+    let i = 0, chars = 0, borrando = false, timer = null;
+
+    function paso() {
+        const palabra = ejemplos[i];
+        let espera;
+
+        if (!borrando) {
+            chars++;
+            espera = 85;
+            if (chars === palabra.length) { borrando = true; espera = 1700; }
+        } else {
+            chars--;
+            espera = 40;
+            if (chars === 0) { borrando = false; i = (i + 1) % ejemplos.length; espera = 450; }
+        }
+        input.placeholder = prefix + palabra.slice(0, chars) + '|';
+        timer = setTimeout(paso, espera);
+    }
+
+    function iniciar() { clearTimeout(timer); paso(); }
+    function detener() { clearTimeout(timer); input.placeholder = defaultText; }
+
+    input.addEventListener('focus', detener);
+    input.addEventListener('blur', () => { if (!input.value) iniciar(); });
+    iniciar();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     renderizarProductos(productos);
+    initTypingPlaceholder();
     
     // Enviar evento de vista de página de productos
     if (typeof sendGAEvent !== 'undefined') {

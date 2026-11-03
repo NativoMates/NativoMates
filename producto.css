@@ -29,16 +29,16 @@
 
 .filtros-section {
     background-color: var(--bg-light);
-    padding: 2rem 0;
+    padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
     position: sticky;
-    top: 60px;
+    top: calc(var(--header-h, 88px) - 1px);
     z-index: 50;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .filtros-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: .75rem;
 }
 
 .filtros-header h3 {
@@ -125,7 +125,7 @@
 .producto-imagen {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, var(--bg-light) 0%, #e8dfd7 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, #e3ede6 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -432,7 +432,7 @@
     }
 
     .filtros-section {
-        top: 50px;
+        top: calc(var(--header-h, 68px) - 1px);
     }
 }
 
