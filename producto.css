@@ -4,7 +4,7 @@
 
 /* Hero de Productos */
 .hero-productos {
-    background: linear-gradient(135deg, #8B7355 0%, #6d5a44 100%);
+    background: linear-gradient(135deg, #014F15 0%, #013a10 100%);
     color: var(--white);
 }
 
@@ -149,7 +149,7 @@
 
 .producto-categoria {
     display: inline-block;
-    background-color: #f0ebe5;
+    background-color: #e9f1ec;
     color: var(--primary-color);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
@@ -232,7 +232,7 @@
 }
 
 .producto-btn:hover {
-    background-color: #6d5a44;
+    background-color: #013a10;
     transform: translateY(-2px);
 }
 
@@ -265,7 +265,7 @@
 .buscador-input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
+    box-shadow: 0 0 0 3px rgba(1,79,21,0.1);
 }
 
 .buscador-input::placeholder {
@@ -310,7 +310,7 @@
 }
 
 .sin-productos-btn:hover {
-    background-color: #6d5a44;
+    background-color: #013a10;
     transform: translateY(-2px);
 }
 

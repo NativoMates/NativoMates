@@ -46,12 +46,25 @@
             <p>Cada pieza seleccionada con cuidado. Todos curados y listos para usar.</p>
         </div>
     </section>
-
+    <!-- Buscador -->
+    <section class="buscar-seccion">
+        <div class="productos-container">
+            <div class="buscar-container">
+                <input 
+                    type="text" 
+                    id="buscador" 
+                    class="buscador-input" 
+                    placeholder="Buscar productos..."
+                    onkeyup="buscarProductos()"
+                >
+            </div>
+        </div>
+    </section>
     <!-- Filtros -->
     <section class="filtros-section">
         <div class="productos-container">
             <div class="filtros-header">
-                <h3>Filtrar por categoría</h3>
+                <h3>¿Qué estás buscando?</h3>
             </div>
             <div class="filtros-container">
                 <button class="filtro-btn active" onclick="filtrarProductos('todos')">
@@ -86,20 +99,6 @@
         </div>
     </section>
 
-    <!-- Buscador -->
-    <section class="buscar-seccion">
-        <div class="productos-container">
-            <div class="buscar-container">
-                <input 
-                    type="text" 
-                    id="buscador" 
-                    class="buscador-input" 
-                    placeholder="🔍 Buscar productos..."
-                    onkeyup="buscarProductos()"
-                >
-            </div>
-        </div>
-    </section>
 
     <!-- Características -->
     <section class="features">
@@ -157,7 +156,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Nativo Mates · Campana, Buenos Aires. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Nativo Mates · Campana, Buenos Aires. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

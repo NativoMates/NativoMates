@@ -10,7 +10,8 @@ const productos = [
         descripcion: 'Mate tipo "Coquito", ideal para tomar solo o con amigos.',
         caracteristicas: ['100% natural', 'Gran capacidad'],
         imagen: 'coquito.jpeg',
-        stock: 'disponible'
+        mensaje: '¡Hola Nativo Mates! Vi en la web el mate tipo "Coquito" y me interesa. ¿Lo tienen disponible? ¿Me pasan fotos reales, precio y formas de envío?',
+        stock: ''
     },
     {
         id: 2,
@@ -19,16 +20,18 @@ const productos = [
         descripcion: 'Tamaño perfecto para compartir. Muy versátil.',
         caracteristicas: ['Calidad premium', 'Virola de alpaca', 'Piezas únicas', 'Talla mediana'],
         imagen: 'algarrobo.jpeg',
-        stock: 'disponible'
+        mensaje: '¡Hola Nativo Mates! Me gustó el Mate de Algarrobo Imperial con virola de alpaca. ¿Tienen stock? ¿Me pueden mostrar fotos de las piezas que tienen y decirme el precio?',
+        stock: ''
     },
     {
         id: 3,
-        nombre: 'Mate tipo "Camionero',
+        nombre: 'Mate tipo "Camionero"',
         categoria: 'mates',
         descripcion: 'Madera de algarrobo. Tradicional y elegante.',
         caracteristicas: ['Madera de algarrobo', 'Gran capacidad', 'Muy duradero', 'Acabado natural'],
         imagen: 'camionero.jpeg',
-        stock: 'disponible'
+        mensaje: '¡Hola Nativo Mates! Estoy interesado/a en el mate tipo "Camionero" de algarrobo. ¿Tienen disponible? ¿Me pasan fotos, precio y cómo sería el envío o retiro?',
+        stock: ''
     },
     {
         id: 4,
@@ -37,7 +40,8 @@ const productos = [
         descripcion: 'Matera clasica. Diseño único.',
         caracteristicas: ['EcoCuero', 'Piezas únicas', 'Diseño clasico'],
         imagen: 'matera.jpeg',
-        stock: 'disponible'
+        mensaje: '¡Hola Nativo Mates! Me interesa la Matera de EcoCuero estilo Cuadrada. ¿Tienen disponible? ¿Qué colores hay y cuánto sale?',
+        stock: ''
     },
     {
         id: 8,
@@ -46,7 +50,8 @@ const productos = [
         descripcion: 'Matera con menor capacidad, mas comodidad. Clásica.',
         caracteristicas: ['Comoda', 'Versatil', 'Calidad Unica'],
         imagen: 'matera2.jpeg',
-        stock: 'disponible'
+        mensaje: '¡Hola Nativo Mates! Quiero consultar por la Matera Chica de EcoCuero. ¿Tienen stock? ¿Me pasan fotos de los modelos y el precio?',
+        stock: ''
     },
     {
         id: 9,
@@ -55,7 +60,8 @@ const productos = [
         descripcion: 'Distintos tipos de yerberas, maxima calidad.',
         caracteristicas: ['Durables','Comodas', 'Versatil'],
         imagen: 'yerberas.jpeg',
-        stock: 'disponible'
+        mensaje: '¡Hola Nativo Mates! Me interesan las yerberas. ¿Qué modelos tienen disponibles ahora? ¿Me pasan fotos y precios?',
+        stock: ''
     },
     {
         id: 10,
@@ -64,7 +70,8 @@ const productos = [
         descripcion: 'Distintos tipos de bombillas',
         caracteristicas: ['Distintas bombillas', 'Alpaca de calidad', 'Variedad de tamaños', 'Económico'],
         imagen: 'bombillas.jpeg',
-        stock: 'disponible'
+        mensaje: '¡Hola Nativo Mates! Quiero consultar por las bombillas. ¿Qué tipos y tamaños tienen? ¿Me pasan fotos y precios?',
+        stock: ''
     },
 ];
 
@@ -182,12 +189,24 @@ function renderizarProductos(productosParaMostrar) {
                 </ul>
             </div>
             <div class="producto-footer">
-                <button class="producto-btn" onclick="event.stopPropagation(); openContactForm();">
+                <button class="producto-btn" onclick="event.stopPropagation(); consultarProducto(${producto.id});">
                     Consultar
                 </button>
             </div>
         </div>
     `).join('');
+}
+
+/**
+ * Abre WhatsApp con un mensaje personalizado para el producto
+ * @param {number} id - ID del producto
+ */
+function consultarProducto(id) {
+    const producto = productos.find(p => p.id === id);
+    if (!producto) return openContactForm();
+    const mensaje = producto.mensaje ||
+        `¡Hola Nativo Mates! Quiero consultar por: ${producto.nombre}. ¿Está disponible?`;
+    openContactForm(mensaje, producto.nombre);
 }
 
 /**
@@ -242,7 +261,7 @@ function abrirDetalles(id) {
             </div>
             
             <div style="display: flex; justify-content: flex-end; align-items: center; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
-                <button class="btn-primary" onclick="event.stopPropagation(); openContactForm(); this.closest('.modal').remove();">
+                <button class="btn-primary" onclick="event.stopPropagation(); consultarProducto(${producto.id}); this.closest('.modal').remove();">
                     Consultar ahora
                 </button>
             </div>
