@@ -854,3 +854,96 @@ html[data-theme="dark"] .stock-agotado { background:rgba(240,110,110,.16); color
 /* Footer y flotantes */
 html[data-theme="dark"] footer { background:#070b09; color:#e7efe9; border-top:1px solid rgba(255,255,255,.06); }
 html[data-theme="dark"] .floating-top { background:rgba(22,32,26,.96); color:var(--secondary-color); border-color:rgba(255,255,255,.12); }
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+.hero-faq { min-height:380px; }
+.faq { padding:4.5rem 2rem 5.5rem; }
+.faq-container { max-width:860px; margin:0 auto; }
+.faq-filters { display:flex; flex-wrap:wrap; justify-content:center; gap:.7rem; margin:2.25rem 0 2rem; }
+.faq-list { display:flex; flex-direction:column; gap:1rem; }
+.faq-item { background:#fff; border:1px solid var(--border-color); border-radius:20px; box-shadow:var(--shadow-sm); overflow:hidden; }
+.faq-item.reveal { transition:opacity .7s ease,transform .7s ease,box-shadow .3s ease,border-color .3s ease; }
+.faq-item:hover { box-shadow:var(--shadow-md); }
+.faq-item.is-open { border-color:rgba(1,79,21,.35); }
+.faq-item h3 { margin:0; font-size:inherit; }
+.faq-q { width:100%; display:flex; align-items:center; gap:1rem; padding:1.3rem 1.5rem; background:none; border:0; cursor:pointer; text-align:left; font:inherit; font-weight:700; font-size:1.05rem; line-height:1.4; color:var(--text-dark); }
+.faq-q:focus-visible { outline:3px solid var(--secondary-color); outline-offset:-3px; border-radius:20px; }
+.faq-q-text { flex:1; }
+.faq-tag { flex-shrink:0; padding:.25rem .65rem; border-radius:999px; background:rgba(95,179,122,.15); color:var(--primary-dark); font-size:.68rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+.faq-icon { position:relative; flex-shrink:0; width:34px; height:34px; border-radius:50%; background:rgba(95,179,122,.15); transition:background .3s,transform .35s; }
+.faq-icon::before,.faq-icon::after { content:""; position:absolute; left:50%; top:50%; width:14px; height:2px; margin:-1px 0 0 -7px; border-radius:2px; background:var(--primary-color); transition:transform .35s; }
+.faq-icon::after { transform:rotate(90deg); }
+.faq-item.is-open .faq-icon { background:var(--primary-dark); transform:rotate(180deg); }
+.faq-item.is-open .faq-icon::before,.faq-item.is-open .faq-icon::after { background:#fff; }
+.faq-item.is-open .faq-icon::after { transform:rotate(0deg); }
+.faq-a { display:grid; grid-template-rows:0fr; transition:grid-template-rows .4s ease; }
+.faq-item.is-open .faq-a { grid-template-rows:1fr; }
+.faq-a-inner { overflow:hidden; }
+.faq-a p { margin:0; padding:0 1.5rem 1.5rem; color:var(--text-light); line-height:1.8; }
+.faq-a a { color:var(--primary-color); font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+@media (max-width:650px) {
+    .faq { padding:3rem 1rem 4rem; }
+    .faq-q { padding:1.1rem 1.1rem; font-size:1rem; gap:.75rem; }
+    .faq-tag { display:none; }
+    .faq-a p { padding:0 1.1rem 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) { .faq-a,.faq-icon,.faq-icon::before,.faq-icon::after { transition:none; } }
+html[data-theme="dark"] .faq-item { background:#16201a; }
+html[data-theme="dark"] .faq-item.is-open { border-color:rgba(127,209,154,.4); }
+html[data-theme="dark"] .faq-tag { color:var(--secondary-color); }
+html[data-theme="dark"] .faq-icon::before,html[data-theme="dark"] .faq-icon::after { background:var(--secondary-color); }
+
+/* ==========================================================
+   VIDEOS (Cómo armar un buen mate)
+   ========================================================== */
+@media (min-width:821px) and (max-width:1000px) {
+    nav { gap:.2rem; }
+    nav a { font-size:1rem; padding:.8rem .8rem; }
+    nav a::after { left:.8rem; right:.8rem; }
+}
+.videos { padding:4rem 2rem 5.5rem; }
+.videos-container { max-width:1200px; margin:0 auto; }
+.video-layout { display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,1fr); gap:2rem; align-items:start; }
+.video-player-card,.video-playlist { background:#fff; border:1px solid var(--border-color); border-radius:20px; box-shadow:var(--shadow-sm); overflow:hidden; }
+.video-frame { position:relative; aspect-ratio:16/9; background:#000; }
+.video-frame video { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:#000; display:block; }
+.video-error { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.4rem; padding:1.5rem; text-align:center; background:rgba(8,14,10,.92); color:#fff; }
+.video-error[hidden] { display:none; }
+.video-error p { margin:0; font-size:.9rem; opacity:.85; }
+.video-error code { padding:.1rem .4rem; border-radius:6px; background:rgba(255,255,255,.14); }
+.video-info { padding:1.5rem 1.75rem 1.75rem; }
+.video-step { display:inline-block; padding:.25rem .7rem; border-radius:999px; background:rgba(95,179,122,.15); color:var(--primary-dark); font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+.video-info h2 { margin:.8rem 0 .5rem; font-size:1.6rem; line-height:1.25; color:var(--text-dark); }
+.video-info p { margin:0; color:var(--text-light); line-height:1.75; }
+.video-controls { display:flex; flex-wrap:wrap; align-items:center; gap:.75rem; margin-top:1.4rem; }
+.video-controls .btn-secondary { padding:.65rem 1.3rem; font-size:.95rem; border-radius:999px; }
+.video-controls .btn-secondary:disabled { opacity:.4; cursor:not-allowed; pointer-events:none; }
+.video-auto { display:flex; align-items:center; gap:.5rem; margin-left:auto; color:var(--text-light); font-size:.85rem; cursor:pointer; }
+.video-auto input { accent-color:var(--primary-color); width:16px; height:16px; }
+.video-playlist { padding:1.25rem; }
+.video-playlist h3 { margin:0 0 1rem .4rem; font-size:1.05rem; color:var(--text-dark); }
+.video-playlist ol { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.5rem; max-height:560px; overflow-y:auto; }
+.video-item { width:100%; display:flex; align-items:center; gap:.9rem; padding:.8rem .9rem; border:1px solid transparent; border-radius:14px; background:transparent; color:var(--text-dark); font:inherit; text-align:left; cursor:pointer; transition:background .25s,border-color .25s,transform .25s; }
+.video-item:hover { background:rgba(95,179,122,.1); transform:translateX(3px); }
+.video-item:focus-visible { outline:3px solid var(--secondary-color); outline-offset:1px; }
+.video-item.is-active { background:rgba(95,179,122,.15); border-color:rgba(1,79,21,.35); }
+.video-item-num { flex-shrink:0; width:36px; height:36px; display:grid; place-items:center; border-radius:50%; background:var(--primary-dark); color:#fff; font-weight:800; font-size:.9rem; }
+.video-item-info { display:flex; flex-direction:column; line-height:1.35; }
+.video-item-info strong { font-size:.97rem; }
+.video-item-info small { color:var(--text-light); font-size:.8rem; }
+@media (max-width:900px) {
+    .video-layout { grid-template-columns:1fr; }
+    .video-playlist ol { max-height:none; }
+    .video-auto { margin-left:0; width:100%; }
+}
+@media (max-width:650px) {
+    .videos { padding:2.5rem 1rem 4rem; }
+    .video-info { padding:1.25rem; }
+    .video-info h2 { font-size:1.3rem; }
+}
+html[data-theme="dark"] .video-player-card,
+html[data-theme="dark"] .video-playlist { background:#16201a; }
+html[data-theme="dark"] .video-step { color:var(--secondary-color); }
+html[data-theme="dark"] .video-item.is-active { border-color:rgba(127,209,154,.4); }

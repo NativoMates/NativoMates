@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TLSS354D');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo armar un buen mate | Nativo Mates Campana</title>
+    <meta name="description" content="Videos paso a paso para armar un buen mate: elegir el mate, curarlo, cargar la yerba, cebar y cuidarlo. Por Nativo Mates, Campana.">
+    <link rel="icon" type="image/png" href="nativomateslogo.png">
+    <script>try{if(localStorage.getItem("nm-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLSS354D"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="nativomateslogo.png" alt="Nativo Mates">
+            </a>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="como-comprar.html">Cómo comprar</a>
+                <a href="preguntas-frecuentes.html">FAQ</a>
+                <a href="como-armar-un-buen-mate.html">Guía</a>
+            </nav>
+            <button class="btn-primary" onclick="openContactForm()">Contacto</button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero hero-faq">
+        <div class="hero-container">
+            <h1>Cómo armar un buen mate</h1>
+            <p>Mirá el paso a paso: desde elegir tu mate hasta cuidarlo para que te dure años.</p>
+        </div>
+    </section>
+
+    <!-- Videos -->
+    <section class="videos">
+        <div class="videos-container">
+            <div class="video-layout">
+
+                <div class="video-player-card">
+                    <div class="video-frame">
+                        <video id="mainVideo" controls playsinline preload="metadata">
+                            Tu navegador no puede reproducir este video.
+                        </video>
+                        <div class="video-error" id="videoError" hidden>
+                            <strong>No se pudo cargar el video</strong>
+                            <p>Revisá que el archivo <code></code> exista en la carpeta <em>videos</em> y que sea un .mp4.</p>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-step" id="videoStep"></span>
+                        <h2 id="videoTitle"></h2>
+                        <p id="videoDesc"></p>
+                        <div class="video-controls">
+                            <button class="btn-secondary" type="button" id="videoPrev">←</button>
+                            <button class="btn-secondary" type="button" id="videoNext">→</button>
+                            <label class="video-auto">
+                                <input type="checkbox" id="autoNext" unchecked>
+                                Reproducir el siguiente automáticamente
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="video-playlist" aria-label="Lista de videos">
+                    <h3>Todos los videos</h3>
+                    <ol id="videoList"></ol>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contacto">
+        <div class="cta-container">
+            <h2>¿Listo para armar el tuyo?</h2>
+            <p>Elegí tu mate, tu bombilla y tu yerbera, y te asesoramos por WhatsApp.</p>
+            <button class="btn-primary" onclick="window.location.href='productos.html'">Ver productos</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Nativo Mates</h3>
+                    <p>Mates artesanales y termos de calidad</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/nativomates.campana" target="_blank" rel="noopener noreferrer">📷</a>
+                        <a href="https://wa.me/5493489701958" target="_blank" rel="noopener noreferrer">💬</a>
+                        <a href="mailto:info@nativomates.com">📧</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Ubicación</h3>
+                    <p>Campana, Buenos Aires</p>
+                    <p>Los Cardales, Buenos Aires</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <a href="index.html">Inicio</a>
+                    <a href="productos.html">Productos</a>
+                    <a href="como-comprar.html">Cómo comprar</a>
+                    <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+                    <a href="como-armar-un-buen-mate.html">Cómo armar tu mate</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nativo Mates · Campana, Buenos Aires. Todos los derechos reservados.</p>
+                <p class="dev-credit"><a href="https://santicz-devs.github.io/PaginaPersonal/#home" target="_blank" rel="noopener noreferrer">Santi.dev</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="videos.js"></script>
+</body>
+</html>

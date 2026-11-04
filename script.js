@@ -282,7 +282,7 @@ function initMobileNavigation() {
 
 function initPremiumReveal() {
     if (!('IntersectionObserver' in window)) return;
-    const targets = document.querySelectorAll('.hero-container,.section-header,.about-container,.cta-container,.feature-card,.product-card,.step-card,.highlight,.producto-card,.testimonial-card');
+    const targets = document.querySelectorAll('.hero-container,.section-header,.about-container,.cta-container,.feature-card,.product-card,.step-card,.highlight,.producto-card,.testimonial-card,.faq-item,.video-player-card,.video-playlist');
     targets.forEach((el,i) => {
         if (!el.classList.contains('reveal')) {
             el.classList.add('reveal');
@@ -452,9 +452,45 @@ function initThemeToggle() {
     render();
 }
 
+
+/* =========================================================
+   FAQ: acordeón + filtros por tema
+   ========================================================= */
+function initFaq() {
+    const list = document.querySelector('.faq-list');
+    if (!list) return;
+    const items = list.querySelectorAll('.faq-item');
+
+    items.forEach(item => {
+        const btn = item.querySelector('.faq-q');
+        const panel = item.querySelector('.faq-a');
+        btn.addEventListener('click', () => {
+            const open = !item.classList.contains('is-open');
+            item.classList.toggle('is-open', open);
+            btn.setAttribute('aria-expanded', String(open));
+            panel.inert = !open;
+            if (open && typeof sendGAEvent === 'function') {
+                sendGAEvent('faq_open', { question: btn.querySelector('.faq-q-text').textContent.trim() });
+            }
+        });
+    });
+
+    const filters = document.querySelectorAll('.faq-filters .filtro-btn');
+    filters.forEach(f => f.addEventListener('click', () => {
+        const value = f.dataset.filter;
+        filters.forEach(b => {
+            const on = b === f;
+            b.classList.toggle('active', on);
+            b.setAttribute('aria-pressed', String(on));
+        });
+        items.forEach(item => { item.hidden = !(value === 'todas' || item.dataset.cat === value); });
+    }));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initTestimonials();
     initFooterSocialIcons();
+    initFaq();
     initThemeToggle();
     initHeaderOffset();
     initFloatingActions();
